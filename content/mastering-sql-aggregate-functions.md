@@ -5,6 +5,7 @@ slug: mastering-sql-aggregate-functions
 date: 09/19/2024
 author: Ashwin Joshi
 image: https://images.pexels.com/photos/1102797/pexels-photo-1102797.png?auto=compress&cs=tinysrgb&w=600
+seo: 
 ---
 
 # Introduction to SQL Aggregate Functions
