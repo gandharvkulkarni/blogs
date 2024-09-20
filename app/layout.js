@@ -2,6 +2,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import { ThemeProvider } from "@/components/theme-provider"
+import AdSense from "@/components/adsense/AdSense";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -13,6 +14,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className="scroll-p-20 scroll-smooth">
+      <head>
+      <AdSense pId="ca-pub-4700602838719113"/>
+      </head>
       <body className={inter.className}>
       <ThemeProvider
             attribute="class"
