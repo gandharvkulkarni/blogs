@@ -1,11 +1,12 @@
 ---
 title: Mastering SQL Aggregate Functions Unleashing the Power of Data Analysis
 description: A comprehensive guide to SQL aggregate functions and their application in data analysis.
-slug: mastering-sql-aggregate-functions
+slug: mastering-sql-aggregate-function
 date: 09/19/2024
 author: Ashwin Joshi
 image: https://images.pexels.com/photos/1102797/pexels-photo-1102797.png?auto=compress&cs=tinysrgb&w=600
-seo: 
+relatedBlogs:
+ - {link: "mastering-sql-select-count-group-by-count", title: "Mastering SQL Understanding SELECT COUNT with GROUP BY Clause"}
 ---
 
 # Introduction to SQL Aggregate Functions

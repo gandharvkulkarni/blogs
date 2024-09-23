@@ -13,7 +13,10 @@ import OnThisPage from "@/components/onthispage"
 import rehypeAutolinkHeadings from 'rehype-autolink-headings'
 import rehypeSlug from 'rehype-slug'
 import AdBanner from "@/components/adsense/AdBanner"
-
+import TrandingBlogs from "@/components/trandingBlogs/TrandingBlogs"
+import RelatedBlogs from "@/components/relatedBlogs/RelatedBlogs"
+import ShareButton from "@/components/shareButton/ShareButton"
+import { IoMdTime } from "react-icons/io";
 
 export async function generateMetadata({ params, searchParams }, parent) {
     const filepath = `content/${params.slug}.md`
@@ -22,12 +25,12 @@ export async function generateMetadata({ params, searchParams }, parent) {
     const id = params.slug
     const fileContent = fs.readFileSync(filepath, "utf-8")
     const { content, data } = matter(fileContent)
-   
+
     return {
-      title: data.title,
-      description: data.description
+        title: data.title,
+        description: data.description
     }
-  }
+}
 
 
 export default async function Page({ params }) {
@@ -62,28 +65,50 @@ export default async function Page({ params }) {
 
     const htmlContent = (await processor.process(content)).toString()
 
-    return (
-        <div className="max-w-6xl mx-auto p-4">
 
+
+    return (
+        <div className="container mx-auto p-4">
             <div className="relative w-full h-64">
                 <img src={data.image} alt={data.title} className="w-full h-64 object-cover rounded-lg" />
                 <div className="absolute bottom-0 left-0 w-full h-28 bg-gradient-to-t from-[#fff] dark:from-[#030712] to-transparent"></div>
             </div>
+
             <h1 className="text-4xl font-bold mb-4">{data.title}</h1>
-            <p className="text-base mb-2 border-l-4 border-gray-500 pl-4 italic">&quot;{data.description}&quot;</p>
-            <div className="flex gap-2">
+            <p className="text-base mb-2 border-l-4 border-gray-500 pl-4 italic">{data.description}</p>
+
+            <div className="flex gap-2 mt-5">
                 <p className="text-sm text-gray-500 mb-4 italic">By {data.author}</p>
-                <p className="text-sm text-gray-500 mb-4">{data.date}</p>
+                <p className="text-sm text-gray-500 mb-4 flex justify-center items-center gap-1"> <IoMdTime /> {data.date}</p>
             </div>
-            <div className="relative">
+            <div className="relative lg:gap-10 lg:py-8 xl:grid xl:grid-cols-[1fr_300px]">
                 <div dangerouslySetInnerHTML={{ __html: htmlContent }} className="prose dark:prose-invert"></div>
-                <OnThisPage htmlContent={htmlContent} />
-                <section className="relative top-20 right-0">
-                <AdBanner dataAdFormat="auto"
-                dataFullWidthResponsive={true}
-                dataAdSlot="4700602838719113"/>
+
+                <div className="hidden xl:block">
+                <section className="sticky top-16 right-0 max-w-sm flex flex-col p-6" >
+                    <ShareButton />
+                    <hr class="h-px my-4 bg-transparent border-0"></hr>
+
+                    <OnThisPage htmlContent={htmlContent} />
+                    <hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700"></hr>
+
+                    <RelatedBlogs params={params} />
+                    <hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700"></hr>
+
+                    <TrandingBlogs />
                 </section>
+
+                </div>
+
             </div>
+            <section className="my-3">
+                <ShareButton />
+            </section>
+            <hr class="w-48 h-1 mx-auto my-4 bg-gray-100 border-0 rounded md:my-10 dark:bg-gray-700"></hr>
+            <TrandingBlogs images={true} />
+            {/* <AdBanner dataAdFormat="auto"
+                dataFullWidthResponsive={true}
+                dataAdSlot="4700602838719113" /> */}
         </div>
     )
 }

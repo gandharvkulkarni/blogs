@@ -1,8 +1,7 @@
 "use client"
-import { Button } from "@/components/ui/button"
 import Typed from 'typed.js';
 import React, {useRef, useEffect} from 'react';
-
+import TrandingBlogs from '@/components/trandingBlogs/TrandingBlogs';
 export default function Home() {
     // Create reference to store the DOM element containing the animation
     const el = useRef(null);
@@ -26,7 +25,7 @@ export default function Home() {
       <section className="container px-4 py-10 mx-auto lg:h-128 lg:space-x-8 lg:flex lg:items-center">
         <div className="w-full text-center lg:text-left lg:w-1/2 lg:-mt-8">
           <h1 className="text-3xl leading-snug text-gray-800 dark:text-gray-200 md:text-4xl">
-            A <span className="font-semibold">free blog</span> for <span className="font-semibold decoration-primary"><span ref={el} /></span>
+            A <span className="font-semibold">free blog</span> for <span className="font-semibold decoration-primary text-green-500"><span ref={el} /></span>
           </h1>
           <p className="mt-4 text-lg text-gray-500 dark:text-gray-300">
             Discover your corner of the data world.
@@ -40,6 +39,9 @@ export default function Home() {
         <div className="w-full mt-4 lg:mt-0 lg:w-1/2">
           <img src="https://www.creative-tim.com/twcomponents/svg/website-designer-bro-purple.svg" alt="tailwind css components" className="w-full h-full max-w-md mx-auto" />
         </div>
+      </section>
+      <section className='container px-4 py-10 mx-auto lg:h-128 lg:space-x-8 lg:flex lg:items-center'>
+      <TrandingBlogs images={true}/>
       </section>
     </main>
   );

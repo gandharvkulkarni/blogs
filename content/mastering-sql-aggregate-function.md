@@ -5,6 +5,8 @@ slug: mastering-sql-aggregate-function
 date: 09/19/2024
 author: Ashwin Joshi
 image: https://images.pexels.com/photos/1102797/pexels-photo-1102797.png?auto=compress&cs=tinysrgb&w=600
+relatedBlogs:
+ - {link: "mastering-sql-select-count-group-by-count", title: "Mastering SQL Understanding SELECT COUNT with GROUP BY Clause"}
 ---
 
 # Introduction to SQL Aggregate Functions

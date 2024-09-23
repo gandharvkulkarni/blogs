@@ -3,6 +3,8 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import { ThemeProvider } from "@/components/theme-provider"
 import AdSense from "@/components/adsense/AdSense";
+import Footer from "@/components/footer/Footer";
+import { Toaster } from "@/components/ui/sonner";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -24,8 +26,11 @@ export default function RootLayout({ children }) {
             enableSystem
             disableTransitionOnChange
           >
+            <Toaster />
         <Navbar/>
         {children}
+        <hr class="h-px bg-gray-200 border-0 dark:bg-gray-700"></hr>
+        <Footer/>
         </ThemeProvider>
       </body>
     </html>

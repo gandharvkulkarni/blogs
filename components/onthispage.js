@@ -18,7 +18,7 @@ const OnThisPage = ({ htmlContent }) => {
   }, [htmlContent]);
 
   return (
-    <div className="on-this-page absolute top-8 right-0 hidden xl:block" >
+    <div>
       <h2 className='text-md font-bold my-2'>On This Page</h2>
       <ul className='text-sm space-y-4'>
         {headings.map((heading, index) => (
