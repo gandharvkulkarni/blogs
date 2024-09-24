@@ -28,8 +28,10 @@ export default function RootLayout({ children }) {
           >
             <Toaster />
         <Navbar/>
+
+        <div className="min-h-screen">
         {children}
-        <hr class="h-px bg-gray-200 border-0 dark:bg-gray-700"></hr>
+        </div>
         <Footer/>
         </ThemeProvider>
       </body>

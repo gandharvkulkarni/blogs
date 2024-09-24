@@ -10,12 +10,12 @@ import {
     LinkedinShareButton,
     WhatsappShareButton,
 } from 'next-share'
-const ShareButton = ({ url }) => {
+const ShareButton = ({ url = `${window.location.origin}${window.location.pathname}` }) => {
     const copylink = (e) => {
         toast("✅  Copied to clipboard", {
             position: "top-center"
         })
-        navigator.clipboard.writeText(window.location.href)
+        navigator.clipboard.writeText(url)
     }
 
     return (
@@ -23,37 +23,36 @@ const ShareButton = ({ url }) => {
             Share this:
 
             <Button size="icon" variant="outline" >
-            <WhatsappShareButton
-                url={`${window.location.origin}${window.location.pathname}`}
-            >
-                <FaWhatsapp />
-            </WhatsappShareButton>
-            </Button>
-            
-            <Button size="icon" variant="outline" >
-            <FacebookShareButton
-                url={`${window.location.origin}${window.location.pathname}`}
-            >
-                <FaFacebook />
-            </FacebookShareButton>
-            </Button>
-
-
-            <Button size="icon" variant="outline" >
-            <LinkedinShareButton
-                url={`${window.location.origin}${window.location.pathname}`}
-                quote
-            >
-                <FaLinkedin />
-            </LinkedinShareButton>
+                <WhatsappShareButton
+                    url={url}
+                >
+                    <FaWhatsapp />
+                </WhatsappShareButton>
             </Button>
 
             <Button size="icon" variant="outline" >
-            <TwitterShareButton
-                url={`${window.location.origin}${window.location.pathname}`}
-            >
-                <FaTwitter />
-            </TwitterShareButton>
+                <FacebookShareButton
+                    url={url}
+                >
+                    <FaFacebook />
+                </FacebookShareButton>
+            </Button>
+
+
+            <Button size="icon" variant="outline" >
+                <LinkedinShareButton
+                    url={url}
+                >
+                    <FaLinkedin />
+                </LinkedinShareButton>
+            </Button>
+
+            <Button size="icon" variant="outline" >
+                <TwitterShareButton
+                    url={url}
+                >
+                    <FaTwitter />
+                </TwitterShareButton>
             </Button>
 
 

@@ -18,7 +18,9 @@ import RelatedBlogs from "@/components/relatedBlogs/RelatedBlogs"
 import ShareButton from "@/components/shareButton/ShareButton"
 import { IoMdTime } from "react-icons/io";
 
+
 export async function generateMetadata({ params, searchParams }, parent) {
+  
     const filepath = `content/${params.slug}.md`
     // read route params
 
@@ -102,7 +104,7 @@ export default async function Page({ params }) {
 
             </div>
             <section className="my-3">
-                <ShareButton />
+                <ShareButton/>
             </section>
             <hr class="w-48 h-1 mx-auto my-4 bg-gray-100 border-0 rounded md:my-10 dark:bg-gray-700"></hr>
             <TrandingBlogs images={true} />

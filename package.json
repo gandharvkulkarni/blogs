@@ -17,6 +17,8 @@
     "@rehype-pretty/transformers": "^0.13.2",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
+    "embla-carousel-autoplay": "^8.3.0",
+    "embla-carousel-react": "^8.3.0",
     "framer-motion": "^11.3.31",
     "gray-matter": "^4.0.3",
     "html-react-parser": "^5.1.15",

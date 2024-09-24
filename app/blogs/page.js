@@ -53,6 +53,7 @@ const Blog = ({ searchParams }) => {
           </div>
           :
           filteredResult.map((blog, index) => (
+            <Link href={`/blogpost/${blog.slug}`} className='hover:bg-gray-400 dark:hover:bg-gray-200 transition-all rounded-lg hover:bg-opacity-10 dark:hover:bg-opacity-10'>
             <div key={index} className="rounded-lg overflow-hidden shadow dark:border-2">
               <img src={blog.image} alt={blog.title} className="w-full h-64 object-cover" />
   
@@ -64,10 +65,9 @@ const Blog = ({ searchParams }) => {
                 <div className="text-sm mb-4">
                   <span>By {blog.author}</span> | <span>{new Date(blog.date).toLocaleDateString('en-GB', { day: '2-digit', month: 'long', year: 'numeric' })}</span>
                 </div>
-  
-                <Link href={`/blogpost/${blog.slug}`} className={buttonVariants({ variant: "outline" })}>Click here</Link>
               </div>
             </div>
+            </Link>
           ))
         }
       </div>
