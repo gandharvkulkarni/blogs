@@ -26,7 +26,7 @@ export async function generateMetadata({ params, searchParams }, parent) {
 
     const id = params.slug
     const fileContent = fs.readFileSync(filepath, "utf-8")
-    const { content, data } = matter(fileContent)
+    const { data } = matter(fileContent)
 
     return {
         title: data.title,
@@ -54,7 +54,7 @@ export default async function Page({ params }) {
         .use(rehypeFormat)
         .use(rehypeStringify)
         .use(rehypeSlug)
-        // .use(rehypeAutolinkHeadings)
+        .use(rehypeAutolinkHeadings)
         .use(rehypePrettyCode, {
             theme: "github-dark",
             transformers: [

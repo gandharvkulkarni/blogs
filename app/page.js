@@ -1,4 +1,4 @@
-"use client"
+'use client';
 import React, {useRef, useEffect} from 'react';
 import TrandingBlogsCarousel from '@/components/trandingBlogs/TrandingBlogsCarousel';
 export default function Home() {
