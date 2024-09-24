@@ -53,8 +53,8 @@ const Blog = ({ searchParams }) => {
           </div>
           :
           filteredResult.map((blog, index) => (
-            <Link href={`/blogpost/${blog.slug}`} className='hover:bg-gray-400 dark:hover:bg-gray-200 transition-all rounded-lg hover:bg-opacity-10 dark:hover:bg-opacity-10'>
-            <div key={index} className="rounded-lg overflow-hidden shadow dark:border-2">
+            <Link key={index} href={`/blogpost/${blog.slug}`} className='hover:bg-gray-400 dark:hover:bg-gray-200 transition-all rounded-lg hover:bg-opacity-10 dark:hover:bg-opacity-10'>
+            <div className="rounded-lg overflow-hidden shadow dark:border-2">
               <img src={blog.image} alt={blog.title} className="w-full h-64 object-cover" />
   
               <div className="p-4">
