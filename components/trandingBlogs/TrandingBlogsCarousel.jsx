@@ -4,8 +4,15 @@ import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious
 import Link from 'next/link.js'
 import Autoplay from "embla-carousel-autoplay"
 import ShareButton from '../shareButton/ShareButton.jsx'
+import { useEffect } from 'react'
+import { useState } from 'react'
 
 const TrandingBlogsCarousel = () => {
+    const [origin, setOrigin] = useState("");
+    
+    useEffect(()=>{
+       setOrigin(location.origin)
+    },[])
     return (
         <>
             <Carousel
@@ -23,7 +30,7 @@ const TrandingBlogsCarousel = () => {
                 <CarouselContent>
                     {trandingBlogs.map((blog, index) => (
                         <CarouselItem key={index}>
-                            <div key={index} className="rounded-lg overflow-hidden shadow border">
+                            <div className="rounded-lg overflow-hidden shadow border">
                                 <Link href={`/blogpost/${blog.link}`}>
                                     <div className="relative w-full h-64">
                                         <img src={blog.image} alt={blog.title} className="w-full h-64 object-cover rounded-lg" />
@@ -39,7 +46,7 @@ const TrandingBlogsCarousel = () => {
                                 </Link>
 
                                 <section className='flex justify-center items-center mb-2'>
-                                <ShareButton url={`${window.location.origin}/${blog.link}`} />
+                                    <ShareButton url={`${origin}/blogpost/${blog.link}`} />
                                 </section>
                             </div>
                         </CarouselItem>

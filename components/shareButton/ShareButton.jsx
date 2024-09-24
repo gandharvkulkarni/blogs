@@ -1,5 +1,3 @@
-'use client';
-
 import React from 'react'
 import { Button } from '../ui/button'
 import { FaCopy, FaFacebook, FaLinkedin, FaTwitter, FaWhatsapp } from "react-icons/fa";

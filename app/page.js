@@ -1,7 +1,5 @@
 "use client"
-import Typed from 'typed.js';
 import React, {useRef, useEffect} from 'react';
-import TrandingBlogs from '@/components/trandingBlogs/TrandingBlogs';
 import TrandingBlogsCarousel from '@/components/trandingBlogs/TrandingBlogsCarousel';
 export default function Home() {
     // Create reference to store the DOM element containing the animation
