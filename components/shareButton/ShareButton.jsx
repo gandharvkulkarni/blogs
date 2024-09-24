@@ -24,7 +24,7 @@ const ShareButton = ({ url }) => {
 
             <Button size="icon" variant="outline" >
             <WhatsappShareButton
-                url={window.location.href}
+                url={`${window.location.origin}${window.location.pathname}`}
             >
                 <FaWhatsapp />
             </WhatsappShareButton>
@@ -32,7 +32,7 @@ const ShareButton = ({ url }) => {
             
             <Button size="icon" variant="outline" >
             <FacebookShareButton
-                url={window.location.href}
+                url={`${window.location.origin}${window.location.pathname}`}
             >
                 <FaFacebook />
             </FacebookShareButton>
@@ -41,7 +41,7 @@ const ShareButton = ({ url }) => {
 
             <Button size="icon" variant="outline" >
             <LinkedinShareButton
-                url={window.location.href}
+                url={`${window.location.origin}${window.location.pathname}`}
                 quote
             >
                 <FaLinkedin />
@@ -50,7 +50,7 @@ const ShareButton = ({ url }) => {
 
             <Button size="icon" variant="outline" >
             <TwitterShareButton
-                url={window.location.href}
+                url={`${window.location.origin}${window.location.pathname}`}
             >
                 <FaTwitter />
             </TwitterShareButton>
