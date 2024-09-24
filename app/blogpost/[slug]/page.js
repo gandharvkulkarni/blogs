@@ -85,18 +85,18 @@ export default async function Page({ params }) {
                 <div dangerouslySetInnerHTML={{ __html: htmlContent }} className="prose dark:prose-invert"></div>
 
                 <div className="hidden xl:block">
-                <section className="sticky top-16 right-0 max-w-sm flex flex-col p-6" >
-                    <ShareButton />
-                    <hr class="h-px my-4 bg-transparent border-0"></hr>
+                    <section className="sticky top-16 right-0 flex flex-col p-6" >
+                        <ShareButton />
+                        <hr class="h-px my-4 bg-transparent border-0"></hr>
 
-                    <OnThisPage htmlContent={htmlContent} />
-                    <hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700"></hr>
+                        <OnThisPage htmlContent={htmlContent} />
+                        <hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700"></hr>
 
-                    <RelatedBlogs params={params} />
-                    <hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700"></hr>
+                        <RelatedBlogs params={params} />
+                        <hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700"></hr>
 
-                    <TrandingBlogs />
-                </section>
+                        <TrandingBlogs />
+                    </section>
 
                 </div>
 
