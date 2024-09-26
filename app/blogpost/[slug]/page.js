@@ -25,16 +25,18 @@ export async function generateMetadata({ params, searchParams }, parent) {
     // read route params
 
     if (!fs.existsSync(filepath)) {
-        notFound()
-        return
+        return notFound()
     }
     const id = params.slug
     const fileContent = fs.readFileSync(filepath, "utf-8")
     const { data } = matter(fileContent)
 
     return {
-        title: data.title,
-        description: data.description
+        title: data?.title,
+        openGraph:{
+            images: [data?.image],
+            description: data?.description
+        }
     }
 }
 
