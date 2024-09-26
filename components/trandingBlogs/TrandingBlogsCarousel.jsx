@@ -1,3 +1,4 @@
+'use client';
 import React from 'react'
 import { trandingBlogs } from '../../trandingBlogs/trandingBlogs.js'
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '../ui/carousel.jsx'
@@ -46,7 +47,7 @@ const TrandingBlogsCarousel = () => {
                                 </Link>
 
                                 <section className='flex justify-center items-center mb-2'>
-                                    <ShareButton url={`${origin}/blogpost/${blog.link}`} />
+                                    <ShareButton title={blog.title} url={`/blogpost/${blog.link}`} />
                                 </section>
                             </div>
                         </CarouselItem>

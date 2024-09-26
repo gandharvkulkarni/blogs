@@ -1,5 +1,5 @@
-"use client";
-import React from 'react'
+'use client'
+import React, { useEffect, useState } from 'react'
 import { Button } from '../ui/button'
 import { FaCopy, FaFacebook, FaLinkedin, FaTwitter, FaWhatsapp } from "react-icons/fa";
 import { toast } from 'sonner';
@@ -9,56 +9,60 @@ import {
     LinkedinShareButton,
     WhatsappShareButton,
 } from 'next-share'
-const ShareButton = ({ url = `${window.location.origin}${window.location.pathname}` }) => {
-    const copylink = (e) => {
+
+const ShareButton = ({ title, url }) => {
+    const [newUrl, setNewUrl] = useState('');
+
+    useEffect(() => {
+        if (typeof window !== 'undefined') {
+            setNewUrl(window.location.origin + url);
+        }
+    }, [url]);
+
+    const copylink = () => {
         toast("✅  Copied to clipboard", {
             position: "top-center"
-        })
-        navigator.clipboard.writeText(url)
+        });
+        navigator.clipboard.writeText(newUrl);
     }
 
     return (
-        <section className="flex gap-2 items-center">
+        <section className="flex gap-3 items-center">
             Share this:
 
-            <Button size="icon" variant="outline" >
-                <WhatsappShareButton
-                    url={url}
-                >
-                    <FaWhatsapp />
-                </WhatsappShareButton>
-            </Button>
+            <WhatsappShareButton
+                title={title}
+                separator="  "
+                blankTarget={false}
+                url={newUrl}
+            >
+                <FaWhatsapp />
+            </WhatsappShareButton>
 
-            <Button size="icon" variant="outline" >
-                <FacebookShareButton
-                    url={url}
-                >
-                    <FaFacebook />
-                </FacebookShareButton>
-            </Button>
+            <FacebookShareButton
+                quote={title}
+                url={newUrl}
+            >
+                <FaFacebook />
+            </FacebookShareButton>
 
+            <LinkedinShareButton
+                title={title}
+                url={newUrl}
+            >
+                <FaLinkedin />
+            </LinkedinShareButton>
 
-            <Button size="icon" variant="outline" >
-                <LinkedinShareButton
-                    url={url}
-                >
-                    <FaLinkedin />
-                </LinkedinShareButton>
-            </Button>
+            <TwitterShareButton
+                title={title}
+                url={newUrl}
+            >
+                <FaTwitter />
+            </TwitterShareButton>
 
-            <Button size="icon" variant="outline" >
-                <TwitterShareButton
-                    url={url}
-                >
-                    <FaTwitter />
-                </TwitterShareButton>
-            </Button>
-
-
-
-            <Button size="icon" variant="outline" onClick={copylink}><FaCopy /></Button>
+            <FaCopy onClick={copylink} />
         </section>
     )
 }
 
-export default ShareButton
+export default ShareButton;

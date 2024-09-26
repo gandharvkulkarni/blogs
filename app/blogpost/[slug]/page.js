@@ -24,6 +24,10 @@ export async function generateMetadata({ params, searchParams }, parent) {
     const filepath = `content/${params.slug}.md`
     // read route params
 
+    if (!fs.existsSync(filepath)) {
+        notFound()
+        return
+    }
     const id = params.slug
     const fileContent = fs.readFileSync(filepath, "utf-8")
     const { data } = matter(fileContent)
@@ -88,14 +92,14 @@ export default async function Page({ params }) {
 
                 <div className="hidden xl:block">
                     <section className="sticky top-16 right-0 flex flex-col p-6" >
-                        <ShareButton />
-                        <hr class="h-px my-4 bg-transparent border-0"></hr>
+                        <ShareButton title={data.title} url={`/blogpost/${params.slug}`}/>
+                        <hr className="h-px my-4 bg-transparent border-0"></hr>
 
                         <OnThisPage htmlContent={htmlContent} />
-                        <hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700"></hr>
+                        <hr className="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700"></hr>
 
                         <RelatedBlogs params={params} />
-                        <hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700"></hr>
+                        <hr className="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700"></hr>
 
                         <TrandingBlogs />
                     </section>
@@ -106,7 +110,7 @@ export default async function Page({ params }) {
             <section className="my-3">
                 <ShareButton/>
             </section>
-            <hr class="w-48 h-1 mx-auto my-4 bg-gray-100 border-0 rounded md:my-10 dark:bg-gray-700"></hr>
+            <hr className="w-48 h-1 mx-auto my-4 bg-gray-100 border-0 rounded md:my-10 dark:bg-gray-700"></hr>
             <TrandingBlogs images={true} />
             {/* <AdBanner dataAdFormat="auto"
                 dataFullWidthResponsive={true}
