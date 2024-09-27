@@ -32,7 +32,7 @@ jobs:
           script: |
             # Navigate to your app directory
             pwd
-            cd {{ secrets.TARGET_DIR }}
+            cd /home/ec2-user/blogs
             ls
             
             # Install dependencies
