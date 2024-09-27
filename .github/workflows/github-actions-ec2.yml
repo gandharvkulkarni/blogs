@@ -41,7 +41,7 @@ jobs:
 
             # Start the app using PM2
             pm2 stop all || true  # Stop existing PM2 processes
-            pm2 start npm --name "nextjs-app" -- run start  # Start the Next.js app
+            pm2 start npm --name "blogs" -- run start  # Start the Next.js app
 
             # Save the PM2 process list and resurrect on reboot
             pm2 save
