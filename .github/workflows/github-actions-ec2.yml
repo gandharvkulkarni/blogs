@@ -30,9 +30,10 @@ jobs:
           username: ${{ secrets.USERNAME }}
           key: ${{ secrets.EC2_SSH_KEY }}
           script: |
-            # Navigate to your app directory
+            # Navigate to your app directory 
             cd {{ secrets.TARGET_DIR }}
-            
+            echo {{ secrets.TARGET_DIR }}
+            ls
             # Install dependencies
             npm install
             
