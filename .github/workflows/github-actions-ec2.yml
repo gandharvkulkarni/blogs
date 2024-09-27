@@ -31,9 +31,8 @@ jobs:
           key: ${{ secrets.EC2_SSH_KEY }}
           script: |
             # Navigate to your app directory 
-            cd {{ secrets.TARGET_DIR }}
-            echo {{ secrets.TARGET_DIR }}
-            ls
+            cd /home/ec2-user/blogs
+            
             # Install dependencies
             npm install
             
