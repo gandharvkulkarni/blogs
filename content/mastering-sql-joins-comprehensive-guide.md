@@ -5,6 +5,8 @@ slug: mastering-sql-joins-comprehensive-guide
 date: 09/19/2024
 author: Sumedh Dable
 image: https://images.pexels.com/photos/2061168/pexels-photo-2061168.jpeg?auto=compress&cs=tinysrgb&w=600
+category: ''
+subCategory: ''
 relatedBlogs:
  - {link: "mastering-sql-aggregate-functions", title: "Mastering SQL Aggregate Functions Unleashing the Power of Data Analysis"}
 ---
