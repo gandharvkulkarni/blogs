@@ -32,7 +32,7 @@ jobs:
           script: |
             # Navigate to your app directory
             pwd
-            cd /home/{{ secrets.TARGET_DIR }}
+            cd {{ secrets.TARGET_DIR }}
             ls
             
             # Install dependencies
