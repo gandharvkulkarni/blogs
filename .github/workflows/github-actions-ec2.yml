@@ -45,4 +45,4 @@ jobs:
             pm2 stop blogs
             
             # Start the app using PM2
-            pm2 start next --name "blogs" -- start
+            pm2 start npm --name "blogs" -- start
