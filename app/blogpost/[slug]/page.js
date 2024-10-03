@@ -73,8 +73,6 @@ export default async function Page({ params }) {
 
     const htmlContent = (await processor.process(content)).toString()
 
-
-
     return (
         <div className="container mx-auto p-4">
             <div className="relative w-full h-64">
