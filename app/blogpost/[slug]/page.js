@@ -17,7 +17,9 @@ import TrandingBlogs from "@/components/trandingBlogs/TrandingBlogs"
 import RelatedBlogs from "@/components/relatedBlogs/RelatedBlogs"
 import ShareButton from "@/components/shareButton/ShareButton"
 import { IoMdTime } from "react-icons/io";
+import { getRandomImage } from "@/public/images"
 
+const blogImage = getRandomImage()
 
 export async function generateMetadata({ params, searchParams }, parent) {
   
@@ -34,7 +36,7 @@ export async function generateMetadata({ params, searchParams }, parent) {
     return {
         title: data?.title,
         openGraph:{
-            images: [data?.image],
+            images: blogImage,
             description: data?.description
         }
     }
@@ -76,7 +78,7 @@ export default async function Page({ params }) {
     return (
         <div className="container mx-auto p-4">
             <div className="relative w-full h-64">
-                <img src={data.image} alt={data.title} className="w-full h-64 object-cover rounded-lg" />
+                <img src={blogImage} alt={data.title} className="w-full h-64 object-cover rounded-lg" />
                 <div className="absolute bottom-0 left-0 w-full h-28 bg-gradient-to-t from-[#fff] dark:from-[#030712] to-transparent"></div>
             </div>
 

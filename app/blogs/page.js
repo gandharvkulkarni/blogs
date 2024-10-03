@@ -4,6 +4,7 @@ import Link from 'next/link';
 import SearchBlog from '@/components/searchBlog/SearchBlog';
 import fs from "fs";
 import matter from 'gray-matter';
+import { getRandomImage } from '@/public/images';
 
 
 const dirContent = fs.readdirSync("content", "utf-8")
@@ -55,7 +56,7 @@ const Blog = ({ searchParams }) => {
           filteredResult.map((blog, index) => (
             <Link key={index} href={`/blogpost/${blog.slug}`} className='hover:bg-gray-400 dark:hover:bg-gray-200 transition-all rounded-lg hover:bg-opacity-10 dark:hover:bg-opacity-10'>
             <div className="rounded-lg overflow-hidden shadow dark:border-2 h-full">
-              <img src={blog.image} alt={blog.title} className="w-full h-64 object-cover" />
+              <img src={getRandomImage()} alt={blog.title} className="w-full h-64 object-cover" />
   
               <div className="p-4">
                 <h2 className="text-2xl font-bold mb-2">{blog.title}</h2>
