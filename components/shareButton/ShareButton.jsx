@@ -15,7 +15,8 @@ const ShareButton = ({ title, url }) => {
 
     useEffect(() => {
         if (typeof window !== 'undefined') {
-            setNewUrl(window.location.origin + url);
+            console.log(new URL(url, window.location.href).href)
+            setNewUrl(new URL(url, window.location.href).href);
         }
     }, [url]);
 
