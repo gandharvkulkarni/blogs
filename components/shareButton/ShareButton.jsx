@@ -14,10 +14,11 @@ const ShareButton = ({ title, url }) => {
     const [newUrl, setNewUrl] = useState('');
 
     useEffect(() => {
-        if (typeof window !== 'undefined') {
-            console.log(new URL(url, window.location.href).href)
-            setNewUrl(new URL(url, window.location.href).href);
-        }
+        // if (typeof window !== 'undefined') {
+        //     console.log(new URL(url, window.location.href).href)
+        //     setNewUrl(new URL(url, window.location.href).href);
+        // }
+        setNewUrl(new URL(url, window.location.href).href);
     }, [url]);
 
     const copylink = () => {
