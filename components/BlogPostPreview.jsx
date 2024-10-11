@@ -54,7 +54,7 @@ const BlogPostPreview = ({ data, slug }) => {
             ></div>
              <Link
              href={`/blogpost/${slug}`}
-             className='transition-all dark:bg-white dark:text-gray-950 bg-gray-950 text-white px-4 py-2 rounded-lg dark:hover:bg-opacity-80 hover:bg-opacity-80 absolute bottom-6 left-1/2 transform -translate-x-1/2 z-10'>Read More</Link>
+             className='transition-all dark:bg-green-500 dark:text-gray-950 bg-green-500 text-white px-4 py-2 rounded-lg dark:hover:bg-opacity-80 hover:bg-opacity-80 absolute bottom-6 left-1/2 transform -translate-x-1/2 z-10'>Read More</Link>
         </div>
     );
 };
