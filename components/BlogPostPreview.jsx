@@ -47,10 +47,10 @@ const BlogPostPreview = ({ data, slug }) => {
 
     return (
         slug && 
-        <div className='relative w-full'>
+        <div className='w-full overflow-hidden blog-preview relative after:bg-gradient-to-b from-transparent dark:to-gray-950 to-white h-[calc(100vh-200px)]'>
             <div
                 dangerouslySetInnerHTML={{ __html: htmlContent }}
-                className="prose dark:prose-invert !max-w-full !w-full h-[550px] overflow-hidden blog-preview relative after:bg-gradient-to-b from-transparent dark:to-gray-950 to-white"
+                className="prose dark:prose-invert !max-w-full !w-full"
             ></div>
              <Link
              href={`/blogpost/${slug}`}

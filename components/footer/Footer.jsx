@@ -2,7 +2,7 @@ import React from 'react'
 
 const Footer = () => {
     return (
-        <footer className="m-4 bg-transparent">
+        <footer className="m-4 bg-transparent" id='footer'>
         <hr className="h-px bg-gray-200 border-0 dark:bg-gray-700"></hr>
             <div className="w-full mx-auto max-w-screen-xl p-4 md:flex md:items-center md:justify-between">
                 <span className="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2024 <a href="https://flowbite.com/" className="hover:underline">Datanalytics.biz</a>. All Rights Reserved.
