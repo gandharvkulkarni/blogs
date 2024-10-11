@@ -51,8 +51,8 @@ const Blog = ({ searchParams }) => {
 
   return (
     <div className="container mx-auto p-4">
-      <h1 className="text-4xl font-bold mb-8 text-center">
-        Blogs<span className='text-5xl text-green-500'>.</span>
+      <h1 className="text-3xl font-bold mb-8 text-center block sm:block md:hidden">
+      Datanalytics Catalogue<span className='text-3xl text-green-500'>.</span>
       </h1>
       <div className='ms-auto my-4 max-w-sm flex gap-2 justify-center items-center'>
         <SearchBlog placeholder="Search Blog" />

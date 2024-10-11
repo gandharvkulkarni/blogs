@@ -28,7 +28,7 @@ export default function BlogGrid({ filteredResult, blogContent }) {
                                 <div className="rounded-lg overflow-hidden shadow dark:border-2 mb-3">
                                     <div className="p-4">
                                         <h2 className="text-2xl font-bold mb-2">{blog.title}</h2>
-                                        <span class="bg-gray-100 text-gray-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-gray-300">{blog?.category}</span>
+                                        <span className="bg-gray-100 text-gray-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-gray-300">{blog?.category}</span>
                                         <div className="text-sm text-gray-400 my-4">
                                             <span>By {blog.author}</span> | <span>{new Date(blog.date).toLocaleDateString('en-GB', { day: '2-digit', month: 'long', year: 'numeric' })}</span>
                                         </div>
