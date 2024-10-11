@@ -41,6 +41,7 @@ jobs:
 
             echo "Building Next.js app"
             npm run build || exit 1
+            
 
             echo "Restarting the app using PM2"
             pm2 restart blogs || pm2 start npm --name "blogs" -- start || exit 1
