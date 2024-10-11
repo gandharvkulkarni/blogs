@@ -200,3 +200,16 @@ code[data-line-numbers-max-digits="4"] > [data-line]::before {
     box-shadow: .2em -.2em 0 0 currentcolor;
   }
 }
+
+
+
+.blog-preview:after {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  bottom: 0;
+  left: 0;
+  pointer-events: none;
+  width: 100%;
+  height: 10em;
+}
