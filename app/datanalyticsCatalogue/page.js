@@ -82,7 +82,7 @@ const Blog = ({ searchParams }) => {
                       <h2 className="text-2xl font-bold mb-2">{blog.title}</h2>
                       <p className="mb-4">{blog.description}</p>
                       <div className="text-sm mb-4">
-                        <span>By {blog.author}</span> | <span>{new Date(blog.date).toLocaleDateString('en-GB', { day: '2-digit', month: 'long', year: 'numeric' })}</span>
+                        <span>{new Date(blog.date).toLocaleDateString('en-GB', { day: '2-digit', month: 'long', year: 'numeric' })}</span>
                       </div>
                     </div>
                   </div>

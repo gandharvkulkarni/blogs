@@ -39,10 +39,7 @@ const TrandingBlogsCarousel = () => {
                                     </div>
 
                                     <div className="p-4">
-                                        <h2 className="text-2xl font-bold mb-2 text-center">{blog.title}</h2>
-                                        <div className="text-sm text-center flex flex-col gap-4 justify-center items-center">
-                                            <span>By {blog.author}</span>
-                                        </div>
+                                        <h2 className="text-2xl font-bold text-center">{blog.title}</h2>
                                     </div>
                                 </Link>
 

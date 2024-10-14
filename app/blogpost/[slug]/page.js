@@ -86,14 +86,13 @@ export default async function Page({ params }) {
             <p className="text-base mb-2 border-l-4 border-gray-500 pl-4 italic">{data.description}</p>
 
             <div className="flex gap-2 mt-5">
-                <p className="text-sm text-gray-500 mb-4 italic">By {data.author}</p>
                 <p className="text-sm text-gray-500 mb-4 flex justify-center items-center gap-1"> <IoMdTime /> {data.date}</p>
             </div>
             <div className="relative lg:gap-10 lg:py-8 xl:grid xl:grid-cols-[1fr_300px]">
                 <div dangerouslySetInnerHTML={{ __html: htmlContent }} className="prose dark:prose-invert"></div>
 
                 <div className="hidden xl:block">
-                    <section className="sticky top-16 right-0 flex flex-col p-6" >
+                    <section className="flex flex-col p-6" >  {/*sticky top-16 right-0 */}
                         <ShareButton title={data.title} url={`/blogpost/${params.slug}`}/>
                         <hr className="h-px my-4 bg-transparent border-0"></hr>
 
