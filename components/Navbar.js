@@ -32,7 +32,7 @@ const Navbar = () => {
                 {
                     pathname === '/datanalyticsCatalogue' &&
                     <h1 className="text-2xl font-bold text-center hidden sm:hidden md:flex">
-                        Datanalytics Catalogue<span className='text-2xl text-green-500'>.</span>
+                        Data-analytics Catalogue<span className='text-2xl text-green-500'>.</span>
                     </h1>
                 }
                 <div className="hidden md:flex space-x-4 items-center">
