@@ -21,7 +21,7 @@ const Blog = ({ searchParams }) => {
   const { device } = userAgent({ headers: headers() });
   const deviceType = device?.type === "mobile" ? "mobile" : "desktop"
   console.log(deviceType)
-  const blogs = fetchBlogs(); // Fetch blogs in the server component
+  const blogs = fetchBlogs();
 
   const page = searchParams?.page ?? '1';
   const per_page = searchParams?.per_page ?? '10';
@@ -35,16 +35,43 @@ const Blog = ({ searchParams }) => {
   let filteredResult = blogPosts?.slice(start, end);
   let filteredContent = blogContent?.slice(start, end)
 
-  if (searchParams?.blogName) {
-    filteredResult = blogPosts?.filter((blog, index) =>
-      blog?.title?.toLowerCase().includes(searchParams?.blogName.toLowerCase())
-    );
   
+  if(searchParams?.blogName){
+    console.log("category")
+
+    filteredResult = blogPosts?.filter((blog, index) =>
+      blog?.title?.toLowerCase().includes(searchParams?.blogName?.toLowerCase())
+    );
+
     // Filter filteredContent based on the indices of filteredResult
     filteredContent = blogContent?.filter((content, index) =>
       filteredResult.some((blog, i) => blogPosts.indexOf(blog) === index)
     );
-  } else {
+  }
+  else if(searchParams?.category){
+    console.log("category")
+    filteredResult = blogPosts?.filter((blog, index) =>
+      blog?.category?.toLowerCase() === searchParams?.category?.toLowerCase()
+    );
+
+    // Filter filteredContent based on the indices of filteredResult
+    filteredContent = blogContent?.filter((content, index) =>
+      filteredResult.some((blog, i) => blogPosts.indexOf(blog) === index)
+    );
+  }
+  else if (searchParams?.blogName || searchParams?.category) {
+    filteredResult = blogPosts?.filter((blog, index) =>
+      blog?.title?.toLowerCase().includes(searchParams?.blogName?.toLowerCase()) ||
+      blog?.category?.toLowerCase().includes(searchParams?.category?.toLowerCase())
+    );
+
+    // Filter filteredContent based on the indices of filteredResult
+    filteredContent = blogContent?.filter((content, index) =>
+      filteredResult.some((blog, i) => blogPosts.indexOf(blog) === index)
+    );
+  }
+  
+  else {
     filteredResult = blogPosts?.slice(start, end);
     filteredContent = blogContent?.slice(start, end);
   }
@@ -52,7 +79,7 @@ const Blog = ({ searchParams }) => {
   return (
     <div className="container mx-auto p-4">
       <h1 className="text-3xl font-bold mb-8 text-center block sm:block md:hidden">
-      Data-analytics Catalogue<span className='text-3xl text-green-500'>.</span>
+        Data-analytics Catalogue<span className='text-3xl text-green-500'>.</span>
       </h1>
       <div className='ms-auto my-4 max-w-sm flex gap-2 justify-center items-center'>
         <SearchBlog placeholder="Search Blog" />
